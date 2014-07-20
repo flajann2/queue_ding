@@ -23,14 +23,22 @@ Jeweler::Tasks.new do |gem|
   gem.name = "queue_ding"
   gem.homepage = "http://github.com/flajann2/queue_ding"
   gem.license = "MIT"
-  gem.summary = %Q{QueueDing is an alternative to Queue}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = %Q{QueueDing is a working alternative to Queue}
+  gem.description = %Q{
+  This roughly mirrors the functionaly of Queue in allowing you to
+  queue messages to one or more threads, and will block if the queue
+  is empty, waking up when there is another message available.
+  }
   gem.email = "lordalveric@yahoo.com"
   gem.authors = ["Fred Mitchell"]
   gem.required_ruby_version = '>= 2.0'
   gem.version = s_version
 
-  # dependencies defined in Gemfile
+  # Exclusions
+  gem.files.exclude 'foo/**/*', 'rdoc/*',
+                    '.idea/**/*', '.idea/**/.*', '.yardoc/**/*',
+                    'Guardfile'
+
 end
 Jeweler::RubygemsDotOrgTasks.new
 

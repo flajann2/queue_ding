@@ -15,6 +15,29 @@ safety.
 
 == Examples
 
+This is taken from the rspec tests.
+
+    require 'queue_ding'
+    include QueueDing
+
+    queue = QDing.new
+
+    tout = Thread.new do
+      (0..1000).each{ |j|
+        (i, num) = @queue.next
+        expect(j).to eq i
+        expect(num).to eq j * 7 + 3
+      }
+    end
+
+    tin = Thread.new do
+      (0..1000).map{|i| [i, i * 7 + 3]}.each{|pair| @queue << pair }
+    end
+
+    tin.join
+    tout.join
+
+
 == Future Proposals
 
 == Copyright

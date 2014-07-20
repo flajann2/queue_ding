@@ -15,6 +15,10 @@ require 'thread'
 
 module QueueDing
 
+  # QDing is basically an extension of the Array class for queuing purposes.
+  # We add QDing#next as a blocking get the next element, as well as
+  # QDing#dequeue which is an alias for Array#pop. Conversely, we add
+  # QDing#enqueue, which is just an alias for Array#unshift.
   class QDing < Array
     include Aquarium::DSL
 
