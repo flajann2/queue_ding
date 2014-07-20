@@ -1,9 +1,32 @@
-= queue_ding
+= QueueDing alternative to Queue
 
-Description goes here.
+This roughly mirrors the functionaly of Queue in allowing you to
+queue messages to one or more threads, and will block if the queue
+is empty, waking up when there is another message available.
+
+Because this is derived directly from the Array class, it has all the
+expected Array functionality, with the appropriate wrappers for thread
+safety.
+
+== Gem Version
+{<img src="https://badge.fury.io/rb/queue_ding.png" alt="Gem Version" />}[http://badge.fury.io/rb/queue_ding]
+
+== Usage
+
+== Examples
+
+== Future Proposals
+
+== Copyright
+
+Copyright (c) 2014 Fred Mitchell. See LICENSE.txt for
+further details.
 
 == Contributing to queue_ding
- 
+
+I am very open to any ideas you may have for new features you may want to see,
+any pull requests, etc.
+
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet.
 * Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it.
 * Fork the project.
@@ -11,6 +34,18 @@ Description goes here.
 * Commit and push until you are happy with your contribution.
 * Make sure to add tests for it. This is important so I don't break it in a future version unintentionally.
 * Please try not to mess with the Rakefile, version, or history. If you want to have your own version, or is otherwise necessary, that is fine, but please isolate to its own commit so I can cherry-pick around it.
+
+== Why I Created QueueDing
+
+I ran into an issue with Queue segfaulting on Ruby 2.1.1 and 2.1.2. I need this
+for my RubyNEAT project and simply has to work. Like deep_dive, this is driven
+by the RubyNEAT effort, which will be quite stringent. So expect to see further
+improvements and enhancements as the needs arise.
+
+== Funny Trivia
+
+"Queue Ding" is actually German for "Queue Thing", so it is my hopes my German
+compatriots will forgive me for any possible faux pas this might entail.
 
 == Copyright
 
