@@ -12,6 +12,7 @@ be relaxed.
 
 require 'aquarium'
 require 'thread'
+require 'set'
 
 module QueueDing
 
@@ -22,10 +23,13 @@ module QueueDing
   class QDing < Array
     include Aquarium::DSL
 
-    attr_accessor :semaphore, :resource
+    # These accessors are ONLY used internally, and are
+    # subject to change.
+    attr_accessor :semaphore, :resource, :listener_threads
 
     def initialize
       super
+      @listener_threads = Set.new
       @semaphore = Mutex.new
       @resource = ConditionVariable.new
     end
@@ -34,6 +38,7 @@ module QueueDing
     alias_method :dequeue, :shift
     alias_method :enqueue, :push
     alias_method :enqueue, :push
+
     # enqueue, and others that need protection for multithreading
     around calls_to: [:<<,
                       :enqueue,
@@ -54,15 +59,30 @@ module QueueDing
     ] do |join_point, q, *args|
       result = nil
       q.semaphore.synchronize {
-        while q.empty?
+        q.listener_threads << (curth = Thread.current)
+        curth[:localq] ||= []
+
+        while q.empty? and curth[:localq].empty?
           q.resource.wait(q.semaphore)
         end
-        result = join_point.proceed
+        # At this point, at least one of the queues have something.
+        # What we do here is that if we have something in the main
+        # queue? We distribute that to the other waiting threads.
+        # Those threads will check their own localq to see if they have
+        # an entry, etc.
+        result = unless curth[:localq].empty?
+                   curth[:localq].shift
+                 else
+                   r = join_point.proceed
+                   q.listener_threads.reject{|t|
+                     t == curth
+                   }.each{ |t|
+                     t[:localq] << r
+                   }
+                   r
+                 end
       }
       result
     end
   end
-
 end
-
-

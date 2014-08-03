@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/../deep_dive/.idea/deep_dive.iml" filepath="$PROJECT_DIR$/../deep_dive/.idea/deep_dive.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/queue_ding.iml" filepath="$PROJECT_DIR$/.idea/queue_ding.iml" />
     </modules>
   </component>

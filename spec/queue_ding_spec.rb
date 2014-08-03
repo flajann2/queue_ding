@@ -1,7 +1,7 @@
 require File.expand_path(File.dirname(__FILE__) + '/spec_helper')
 require 'thread'
 
-CNT = 100000
+CNT = 10000
 CNTI = CNT
 CNTO = CNT
 
@@ -47,5 +47,21 @@ describe QueueDing::QDing do
     tin.join
     tout.join
     expect(@queue.empty?).to be_truthy
+  end
+
+  it "handles teeing" do
+    tg = ThreadGroup.new
+    tg.add Thread.new {
+      sleep 5
+      (0..CNT).each{|i| @queue << i }
+    }
+
+    20.times do
+      tg.add Thread.new {
+        (0..CNT).each{|i| expect(i).to eq @queue.next }
+      }
+    end
+
+    tg.list.each {|t| t.join }
   end
 end

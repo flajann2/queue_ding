@@ -8,6 +8,24 @@ Because this is derived directly from the Array class, it has all the
 expected Array functionality, with the appropriate wrappers for thread
 safety.
 
+== New Funtionality
+=== v0.1.0
+Automatic tee support added, so that multiple listening threads will
+get the same data. There is currenly no way to turn this feature
+off. If this is a problem for you, let me know and I'll add a switch
+sooner.
+
+You may not want this behavior if you are using queue_ding to distrubute
+work among listening threads, but you will want this if you need to ensure
+multile listeners receive the smae data, as in the case with with my
+dyamic interfaces for browser-based Dashboards.
+
+== Known Issues
+=== v0.1.0
+With the new Automatic Tee Feature, there is currently no cleanup
+for dead threads. This could potentially lead to a memory leak situation
+for long running tasks. This problem will be addressed in the next release.
+
 == Gem Version
 {<img src="https://badge.fury.io/rb/queue_ding.png" alt="Gem Version" />}[http://badge.fury.io/rb/queue_ding]
 
@@ -38,7 +56,13 @@ This is taken from the rspec tests.
     tout.join
 
 
-== Future Proposals
+== Changelog
+
+v0.1.0 2014-08-03
+ Added tee capability so that you can tee queue to multiple threads
+ automatically. There are no settings for this. It just works. For some,
+ this behavior may be undesirable, so an option will be added at a later
+ date.
 
 == Copyright
 
