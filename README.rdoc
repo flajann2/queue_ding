@@ -1,8 +1,10 @@
 = QueueDing alternative to Queue
 
-{<img src="https://badges.gitter.im/Join%20Chat.svg" alt="Join the chat at https://gitter.im/flajann2/queue_ding">}[https://gitter.im/flajann2/queue_ding?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge]
+== General
+{<img src="https://badges.gitter.im/Join%20Chat.svg" alt="Join the chat at https://gitter.im/flajann2/queue_ding">}[https://gitter.im/flajann2/queue_ding?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge]  {<img src="https://travis-ci.org/flajann2/queue_ding.svg?branch=master" alt="Build Status">}[https://travis-ci.org/flajann2/queue_ding?branch=master]
 
-{<img src="https://travis-ci.org/flajann2/queue_ding.svg?branch=master" alt="Build Status">}[https://travis-ci.org/flajann2/queue_ding?branch=master]
+== Gem Version
+{<img src="https://badge.fury.io/rb/queue_ding.png" alt="Gem Version" />}[http://badge.fury.io/rb/queue_ding]
 
 This roughly mirrors the functionaly of Queue in allowing you to
 queue messages to one or more threads, and will block if the queue
@@ -29,9 +31,6 @@ dyamic interfaces for browser-based Dashboards.
 With the new Automatic Tee Feature, there is currently no cleanup
 for dead threads. This could potentially lead to a memory leak situation
 for long running tasks. This problem will be addressed in the next release.
-
-== Gem Version
-{<img src="https://badge.fury.io/rb/queue_ding.png" alt="Gem Version" />}[http://badge.fury.io/rb/queue_ding]
 
 == Usage
 
