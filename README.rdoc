@@ -2,7 +2,7 @@
 
 {<img src="https://badges.gitter.im/Join%20Chat.svg" alt="Join the chat at https://gitter.im/flajann2/queue_ding">}[https://gitter.im/flajann2/queue_ding?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge]
 
-{<img src="https://travis-ci.org/flajann2/queue_ding.svg?branch=master">}
+{<img src="https://travis-ci.org/flajann2/queue_ding.svg?branch=master" alt="Build Status">}[https://travis-ci.org/flajann2/queue_ding?branch=master]
 
 This roughly mirrors the functionaly of Queue in allowing you to
 queue messages to one or more threads, and will block if the queue
