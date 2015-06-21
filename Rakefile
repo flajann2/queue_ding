@@ -29,7 +29,7 @@ Jeweler::Tasks.new do |gem|
   queue messages to one or more threads, and will block if the queue
   is empty, waking up when there is another message available.
   }
-  gem.email = "lordalveric@yahoo.com"
+  gem.email = "fred.mitchell@gmx.de"
   gem.authors = ["Fred Mitchell"]
   gem.required_ruby_version = '>= 2.0'
   gem.version = s_version
