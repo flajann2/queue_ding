@@ -3,6 +3,7 @@
 
 == Gem Version
 {<img src="https://badge.fury.io/rb/queue_ding.png" alt="Gem Version" />}[http://badge.fury.io/rb/queue_ding]
+{<img src="https://travis-ci.org/flajann2/queue_ding.svg?branch=master" />}[https://travis-ci.org/flajann2/queue_ding]
 
 This roughly mirrors the functionaly of Queue in allowing you to
 queue messages to one or more threads, and will block if the queue
