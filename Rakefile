@@ -31,7 +31,7 @@ Juwelier::Tasks.new do |gem|
   }
   gem.email = "fred.mitchell@gmx.de"
   gem.authors = ["Fred Mitchell"]
-  gem.required_ruby_version = '>= 2.0'
+  gem.required_ruby_version = '>= 2.2.2'
   gem.version = s_version
 
   # Exclusions

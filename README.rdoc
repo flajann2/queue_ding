@@ -29,7 +29,7 @@ dyamic interfaces for browser-based Dashboards.
 === v0.1.0
 With the new Automatic Tee Feature, there is currently no cleanup
 for dead threads. This could potentially lead to a memory leak situation
-for long running tasks. This problem will be addressed in the next release.
+for long running tasks. This problem will be addressed later.
 
 == Usage
 
