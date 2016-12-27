@@ -1,7 +1,7 @@
 source "http://rubygems.org"
 
 gem 'aquarium', '~> 0'
-gem 'semver', '~> 1'
+gem 'semver2', '~> 3'
 gem "json", "~> 2.0", ">= 2.0.2"
 
 # Add dependencies to develop your gem here.
