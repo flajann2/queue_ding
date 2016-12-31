@@ -39,6 +39,7 @@ module QueueDing
     alias_method :enqueue, :push
     alias_method :enqueue, :push
 
+    
     # enqueue, and others that need protection for multithreading
     around calls_to: [:<<,
                       :enqueue,

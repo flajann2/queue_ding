@@ -13,6 +13,8 @@ Because this is derived directly from the Array class, it has all the
 expected Array functionality, with the appropriate wrappers for thread
 safety.
 
+Like Queue, QueueDing is a FIFO queue.
+
 == New Funtionality
 === v0.1.0
 Automatic tee support added, so that multiple listening threads will
